@@ -19,8 +19,8 @@ namespace Générateur_de_Mot_de_passe
             int chiffres = 3;
             int CaractèreSpéciaux = 4;
             int nombre_de_caractères ;
+             string Base = ("abcdefghijklmnopqrstuvwxyz123456789");
             
-
 
 
 
@@ -74,23 +74,23 @@ namespace Générateur_de_Mot_de_passe
                 int i2 = 0;
                 while (i2 < 10) // tant que i2 inférieur à 10
                 {
-                    Random rand = new Random();
-                    int ascii_index = rand.Next(65, 90); // randomize les caractères ascii entre 65, 90
-                    char MinusculeT = Convert.ToChar(ascii_index);
-                    Console.Write(MinusculeT);
+                    
+                    
+
+                    int i = 0;
+                    while (nombre_de_caractères > i)// tant que nombre_de_caractères supérieur à i
+                    {
+                        Random rand = new Random();
+                        int ascii_index = rand.Next(65, 90);
+                        char MajusculeT = Convert.ToChar(ascii_index);
+                        Console.Write( MajusculeT);
+                        i = i + 1;
+                    }
                     i2 = i2 + 1;
-
+                    Console.WriteLine("");
                 }
 
-                int i = 0;
-                while (nombre_de_caractères > i)// tant que nombre_de_caractères supérieur à i
-                {
-                    Random rand = new Random();
-                    int ascii_index = rand.Next(65, 90);
-                    char MajusculeT = Convert.ToChar(ascii_index);
-                    Console.Write("\r" + MajusculeT);
-                    i = i + 1;
-                }
+                
             }
             
             
@@ -98,26 +98,30 @@ namespace Générateur_de_Mot_de_passe
             {
 
                 int i2 = 0;
+                
                 while (i2 < 10)// tant que i2 est inférieur à 10
                 {
-                    Random rand = new Random();
-                    int ascii_index = rand.Next(30, 39);
-                    char MinusculeT = Convert.ToChar(ascii_index);
-                    Console.Write(MinusculeT);
+                    
+                    
+
+                    int i = 0;
+                    while (nombre_de_caractères > i)// tant que nombre_de_caractères supérieur à i
+                    {
+
+                        Random rand = new Random();
+                        
+                        int NumMin = rand.Next(0, Base.Length);
+                        
+                        
+                        
+                        Console.Write(Base[NumMin]);
+                        i = i + 1;
+                    }
                     i2 = i2 + 1;
-
+                    Console.WriteLine("");
                 }
 
 
-                int i = 0;
-                while (nombre_de_caractères > i)// tant que nombre_de_caractères supérieur à i
-                {
-                    Random rand = new Random();
-                    int ascii_index = rand.Next(30, 39);
-                    char chiffres1 = Convert.ToChar(ascii_index);
-                    Console.Write(chiffres1);
-                    i = i + 1;
-                }
             }
 
             else if (RP == CaractèreSpéciaux)
@@ -125,23 +129,24 @@ namespace Générateur_de_Mot_de_passe
                 int i2 = 0;
                 while (i2 < 10)// tant que i2 est inférieur à 10
                 {
-                    Random rand = new Random();
-                    int ascii_index = rand.Next(32, 47);
-                    char MinusculeT = Convert.ToChar(ascii_index);
-                    Console.Write(MinusculeT);
+                    
+                    
+                    int i = 0;
+                    while (nombre_de_caractères > i)// tant que nombre_de_caractères supérieur à i
+                    {
+                        Random rand = new Random();
+                        int ascii_index = rand.Next(33, 125);
+                      char CaracSpé = Convert.ToChar(ascii_index);
+                        
+
+                        Console.Write(CaracSpé);
+                        i = i + 1;
+                    }
                     i2 = i2 + 1;
-
+                    Console.WriteLine("");
                 }
 
-                int i = 0;
-                while (nombre_de_caractères > i)// tant que nombre_de_caractères supérieur à i
-                {
-                    Random rand = new Random();
-                    int ascii_index = rand.Next(32, 47);
-                    char CaracSpé = Convert.ToChar(ascii_index);
-                    Console.WriteLine(CaracSpé);
-                    i = i + 1;
-                }
+                
             }
         }   
 
